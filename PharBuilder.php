@@ -69,7 +69,9 @@ function buildPhar(string $pharPath, string $basePath, array $includedPaths, arr
 
     $folderPatterns = preg_quote_array([
         DIRECTORY_SEPARATOR . 'tests' . DIRECTORY_SEPARATOR,
-        DIRECTORY_SEPARATOR . '.', //"Hidden" files, git dirs etc
+        DIRECTORY_SEPARATOR . '.', //"Hidden" files, git dirs etc,
+        DIRECTORY_SEPARATOR . 'DeploymentTools' . DIRECTORY_SEPARATOR,
+        DIRECTORY_SEPARATOR . 'devcontainer' . DIRECTORY_SEPARATOR
     ], '/');
 
     //Only exclude these within the basedir, otherwise the project won't get built if it itself is in a directory that matches these patterns
