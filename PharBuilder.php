@@ -74,6 +74,8 @@ function buildPhar(string $pharPath, string $basePath, array $includedPaths, arr
     ];
     if ($metadata['name'] !== 'ServerCore') {
         $ignoredFolders[] = DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR;
+    } else {
+        $ignoredFolders[] = DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'pocketmine' . DIRECTORY_SEPARATOR;
     }
 
     $folderPatterns = preg_quote_array($ignoredFolders, '/');
